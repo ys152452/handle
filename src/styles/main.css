@@ -1,13 +1,13 @@
 html,
 body,
 #app {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
 }
 
 html.dark {
-  background: #121212;
+  background-color: rgba(255,255,255,0.3);
 }
 
 :root {
@@ -22,12 +22,14 @@ html.dark {
 
 p {
   text-align: left;
+  font-size: 1.4em;
 }
 
 .colorblind {
   --c-ok:#5ba554;
   --c-mis: #ff46ff;
   --c-primary:#5ba554;
+  background-color: rgba(255,255,255,0.3);
 }
 
 ul {

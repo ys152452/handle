@@ -7,16 +7,19 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    App: typeof import('./src/components/App.vue')['default']
     AppName: typeof import('./src/components/AppName.vue')['default']
     CharBlock: typeof import('./src/components/CharBlock.vue')['default']
     CheatSheet: typeof import('./src/components/CheatSheet.vue')['default']
     Confetti: typeof import('./src/components/Confetti.vue')['default']
+    copy: typeof import('./src/components/AppName copy.vue')['default']
     Countdown: typeof import('./src/components/Countdown.vue')['default']
     Dashboard: typeof import('./src/components/Dashboard.vue')['default']
     DashboardItem: typeof import('./src/components/DashboardItem.vue')['default']
     FailedPage: typeof import('./src/components/FailedPage.vue')['default']
     FeedbackLinks: typeof import('./src/components/FeedbackLinks.vue')['default']
     Hint: typeof import('./src/components/Hint.vue')['default']
+    Home: typeof import('./src/components/Home.vue')['default']
     Modal: typeof import('./src/components/Modal.vue')['default']
     ModalsLayer: typeof import('./src/components/ModalsLayer.vue')['default']
     Navbar: typeof import('./src/components/Navbar.vue')['default']
@@ -27,6 +30,8 @@ declare module '@vue/runtime-core' {
     Play: typeof import('./src/components/Play.vue')['default']
     PrivacyNotes: typeof import('./src/components/PrivacyNotes.vue')['default']
     ResultFooter: typeof import('./src/components/ResultFooter.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
     Settings: typeof import('./src/components/Settings.vue')['default']
     ShareButton: typeof import('./src/components/ShareButton.vue')['default']
     ShareDialog: typeof import('./src/components/ShareDialog.vue')['default']

@@ -22,7 +22,8 @@
     "nanoid": "^4.0.0",
     "pinyin": "^2.11.2",
     "seedrandom": "^3.0.5",
-    "vue": "^3.2.37"
+    "vue": "^3.2.37",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",

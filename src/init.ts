@@ -8,8 +8,8 @@ import { tryFixAnswer } from './logic/answer-fix'
 
 useTitle(computed(() => `${t('name')} - ${t('description')}`))
 
-if (!initialized.value)
-  showHelp.value = true
+// if (!initialized.value)
+//   showHelp.value = true
 
 watchEffect(() => {
   if (isPassed.value)
