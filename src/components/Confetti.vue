@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import confetti from 'canvas-confetti'
-import { isPassed } from '~/state'
+import { dayNo, isPassed } from '~/state'
+import { TRIES_LIMIT } from '~/logic'
 
 function congrats() {
   const defaults = {
@@ -41,8 +42,20 @@ function congrats() {
 }
 
 watch(isPassed, (v) => {
-  if (v)
+  if (v) {
     setTimeout(congrats, 300)
+    window.parent.postMessage({
+      evt: 'pass',
+    }, '*')
+  }
+  else {
+    window.parent.postMessage({
+      evt: 'fail',
+      params: {
+        try: TRIES_LIMIT,
+      },
+    }, '*')
+  }
 }, { flush: 'post' })
 </script>
 

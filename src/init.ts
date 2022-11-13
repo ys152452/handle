@@ -12,8 +12,14 @@ useTitle(computed(() => `${t('name')} - ${t('description')}`))
 //   showHelp.value = true
 
 watchEffect(() => {
-  if (isPassed.value)
+  if (isPassed.value) {
     meta.value.passed = true
+    setTimeout(() => {
+      window.parent.postMessage({
+        evt: 'pass',
+      }, '*')
+    }, 500)
+  }
 })
 
 watch(daySince, (n, o) => {
@@ -25,7 +31,7 @@ watch(daySince, (n, o) => {
 watch([isFinished, meta], () => {
   if (isFinished.value)
     markEnd()
-    // sendAnalytics()
+  // sendAnalytics()
 }, { flush: 'post' })
 
 watch(isFinished, (v) => {

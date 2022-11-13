@@ -81,18 +81,18 @@ const partTwo = computed(() => {
 
 <template>
   <div
-    h-20 w-20 border-2
+    h-30 w-30 border-2
     flex="~ center" relative
-    leading-1em font-serif
+    leading-3em font-serif
     :class="blockColor"
   >
     <template v-if="char?.char?.trim()">
       <!-- Zhuyin -->
       <template v-if="inputMode === 'zy'">
         <div
-          absolute text-3xl leading-1em flex items-center text-center
+          absolute text-3xl leading-2em flex items-center text-center
           top-0 bottom-0
-          :class="[getColor(parsed?.char, true), useMask ? 'left-3': 'left-4']"
+          :class="[getColor(parsed?.char, true), useMask ? 'left-3' : 'left-4']"
         >
           {{ char.char }}
         </div>
@@ -119,15 +119,15 @@ const partTwo = computed(() => {
       <!-- Pinyin or Shuangpin -->
       <template v-else>
         <div
-          absolute text-3xl leading-1em
-          :class="[getColor(parsed?.char, true), useMask ? 'top-8.5': 'top-8']"
+          absolute text-3xl leading-2em
+          :class="[getColor(parsed?.char, true), useMask ? 'top-9.5' : 'top-9']"
         >
           {{ char.char }}
         </div>
         <div
           absolute font-mono
-          text-center left-0 right-0 font-100 flex flex-col items-center
-          :class="[useMask ? 'top-14px': 'top-11px']"
+          text-center left-0 right-0 font-200 flex flex-col items-center
+          :class="[useMask ? 'top-14px' : 'top-0px']"
         >
           <div
             relative ma items-start
@@ -137,7 +137,7 @@ const partTwo = computed(() => {
               {{ char._1 }}
             </div>
             <div v-if="partTwo" mx-1px flex>
-              <div v-for="w,idx of partTwo" :key="idx" relative>
+              <div v-for="w, idx of partTwo" :key="idx" relative>
                 <div :class="getColor(parsed?._2)">
                   {{ inputMode === 'sp' ? w : w.replace('v', 'u') }}
                 </div>
@@ -152,11 +152,11 @@ const partTwo = computed(() => {
                   :class="getColor(parsed?.tone)"
                   absolute w="86%" left="8%"
                   :style="{
-                    bottom: useMask
+                    top: useMask
                       ? '1.25rem'
                       : w === 'v'
-                        ? '0.85rem'
-                        : '0.78rem',
+                        ? '1.2rem'
+                        : '1.1rem',
                   }"
                 />
               </div>

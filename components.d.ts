@@ -7,12 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    App: typeof import('./src/components/App.vue')['default']
     AppName: typeof import('./src/components/AppName.vue')['default']
     CharBlock: typeof import('./src/components/CharBlock.vue')['default']
     CheatSheet: typeof import('./src/components/CheatSheet.vue')['default']
     Confetti: typeof import('./src/components/Confetti.vue')['default']
-    copy: typeof import('./src/components/AppName copy.vue')['default']
     Countdown: typeof import('./src/components/Countdown.vue')['default']
     Dashboard: typeof import('./src/components/Dashboard.vue')['default']
     DashboardItem: typeof import('./src/components/DashboardItem.vue')['default']

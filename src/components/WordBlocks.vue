@@ -38,9 +38,9 @@ watchEffect(() => {
 <template>
   <div flex>
     <div
-      v-for="c,i in parseWord(word.padEnd(WORD_LENGTH, ' '), answer || todayAnswer.word)" :key="i"
-      w-20 h-20 m1
-      :class="['tile', flip ? 'revealed': '']"
+      v-for="c, i in parseWord(word.padEnd(WORD_LENGTH, ' '), answer || todayAnswer.word)" :key="i"
+      w-30 h-30 m1
+      class="tile" :class="[flip ? 'revealed' : '']"
     >
       <template v-if="animate">
         <CharBlock
@@ -55,7 +55,7 @@ watchEffect(() => {
           :answer="result[i]"
           :style="{
             transitionDelay: `${i * (300 + Math.random() * 50)}ms`,
-            animationDelay: `${i * (100 + Math.random() * 50)}ms`
+            animationDelay: `${i * (100 + Math.random() * 50)}ms`,
           }"
         />
       </template>
@@ -74,6 +74,8 @@ watchEffect(() => {
 .tile {
   user-select: none;
   position: relative;
+  background: #fff;
+  font-size: 1.4rem;
 }
 .tile .front,
 .tile .back {

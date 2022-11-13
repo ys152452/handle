@@ -69,7 +69,7 @@ watchEffect(() => {
 <template>
   <div>
     <div flex="~ col" pt4 items-center>
-      <WordBlocks v-for="w,i of tries" :key="i" :word="w" :revealed="true" @click="focus()" />
+      <WordBlocks v-for="w, i of tries" :key="i" :word="w" :revealed="true" @click="focus()" />
 
       <template v-if="meta.answer">
         <div my4>
@@ -96,7 +96,7 @@ watchEffect(() => {
             <input
               ref="el"
               v-model="inputValue"
-              bg-transparent w-86 p3 outline-none text-center
+              bg-transparent w-126 p3 outline-none text-center
               type="text"
               autocomplete="false"
               :placeholder="t('input-placeholder')"
@@ -149,11 +149,7 @@ watchEffect(() => {
         </div>
       </Transition>
 
-      <template v-if="isDev">
-        <div h-200 />
-        <div op50 mb-2>
-          测试用
-        </div>
+      <!-- <template v-if="isDev">
         <div flex gap2>
           <a
             class="btn"
@@ -174,7 +170,7 @@ watchEffect(() => {
             下一天
           </a>
         </div>
-      </template>
+      </template> -->
     </div>
   </div>
 </template>

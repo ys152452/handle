@@ -19,7 +19,8 @@ html.dark {
 .dark {
   --c-ok: #0d8e8e;
 }
-
+input,
+button,
 p {
   text-align: left;
   font-size: 1.4em;
